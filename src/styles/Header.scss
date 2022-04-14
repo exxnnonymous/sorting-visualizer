@@ -1,0 +1,115 @@
+@import "variables";
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+@mixin buttons($color) {
+  font-family: $primary-font;
+  font-weight: 600;
+  border-radius: 2px;
+  outline: none;
+  color: $color;
+  font-size: 1rem;
+  padding: 3px 8px;
+  background-color: $primary-black;
+  cursor: pointer;
+  border: 1px solid currentColor;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $color;
+    color: $primary-white;
+  }
+}
+
+header {
+  padding-block: 1rem;
+  background-color: $primary-black;
+  color: $primary-red;
+
+  .container {
+    @include flex-between();
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .new__array__btn {
+    @include flex-between();
+
+    button {
+      @include buttons($primary-green);
+    }
+  }
+
+  .sorting__options {
+    @include flex-between();
+
+    button {
+      @include buttons($primary-blue);
+    }
+  }
+
+  .disable__btn {
+    button {
+      pointer-events: none;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: black;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .dropdown__wrapper {
+    background-color: $primary-black;
+    border: 1px solid $primary-blue;
+    border-radius: 2px;
+    position: relative;
+    width: fit-content;
+    
+    button {
+      @include buttons($primary-blue);
+      width: 100%;
+      text-align: left;
+      border: none;
+      padding-inline: .5rem;
+
+    }
+
+    .header{
+      width: 100%;
+
+      button{
+        padding-top: .25rem;
+      }
+      
+    }
+    .items{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      button{
+
+        &:last-of-type{
+          padding-bottom: .25rem;
+        }
+      }
+
+    }
+  }
+
+}
