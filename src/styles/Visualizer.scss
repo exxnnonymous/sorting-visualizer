@@ -26,7 +26,7 @@
     }
 
     .bar_wrapper {
-        $bars-gap:7px;
+        $bars-gap:10px;
         display: flex;
         flex-wrap: nowrap;
         gap: $bars-gap;
@@ -35,7 +35,8 @@
         justify-content: center;
 
       .array_bar {
-        width: calc((100% / $bars-length) - $bars-gap);
+
+        width: calc(100% / #{$bars-length} -  #{$bars-gap}  );
         background-color: $primary-red;
         text-align: center;
         font-weight: 600;
