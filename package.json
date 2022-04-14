@@ -1,19 +1,22 @@
 {
   "name": "sorting-visualizer",
+  "homepage": "https://exxnnonymous.github.io/sorting-visualizer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +39,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
-    "@testing-library/user-event": "^14.1.0"
+    "@testing-library/user-event": "^14.1.0",
+    "gh-pages": "^3.2.3"
   }
 }
